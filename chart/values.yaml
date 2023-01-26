@@ -5,8 +5,8 @@
 replicaCount: 1
 
 image:
-  repository: gcr.io/heptio-images/ks-guestbook-demo
-  tag: 0.1
+  repository: ghcr.io/wenn/helm-argocd-go:latest
+  tag: latest
   pullPolicy: IfNotPresent
 
 service:
