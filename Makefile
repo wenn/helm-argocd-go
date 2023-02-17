@@ -49,11 +49,15 @@ kind-create:
 kind-delete:
 	kind delete cluster --name wenn
 
+.PHONY: kind-create
+kind-reset: kind-delete kind-create
+
 .PHONY: wait-for-password
 wait-for-password:
 	@echo "\nwaiting for argocd password ... takes a few minutes."
 	@for i in {1..120}; do $(MAKE) password-check &>/dev/null; test $$? = 0 && break || sleep 1; done
 	@$(MAKE) password-check &>/dev/null; test $$? = 0 && echo "found init secret\n" || echo "failed to load init secret\n"
+	#TODO use kubectl wait
 
 .PHONY: password-check
 password-check:
