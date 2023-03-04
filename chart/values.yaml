@@ -7,7 +7,7 @@ replicaCount: 1
 image:
   repository: ghcr.io/wenn/helm-argocd-go
   tag: latest
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
 
 service:
   type: ClusterIP
@@ -43,6 +43,3 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
-
-image:
-  pullPolicy: Always
