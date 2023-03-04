@@ -25,7 +25,7 @@ func main() {
 
 	httpPort := os.Getenv("HTTP_PORT")
 	if httpPort == "" {
-		httpPort = "8888"
+		httpPort = "80"
 	}
 
 	e.Logger.Fatal(e.Start("0.0.0.0:" + httpPort))

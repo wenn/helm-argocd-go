@@ -7,7 +7,7 @@ build:
 
 .PHONY: run
 run: build
-	docker run --publish 8888:8888 docker-gs-ping
+	docker run --publish 8888:80 docker-gs-ping
 
 
 # kind + argocd
